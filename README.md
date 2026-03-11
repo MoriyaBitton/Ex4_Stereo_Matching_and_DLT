@@ -64,8 +64,6 @@ The homography transformation maps one image onto another perspective.
 
 ## Run the Project
 
-## Run the Project
-
 Install dependencies:
 
 ```bash
