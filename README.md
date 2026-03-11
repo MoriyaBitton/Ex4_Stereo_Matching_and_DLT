@@ -47,10 +47,10 @@ The matrix is then used to **warp one image into the perspective of another**.
 ## Example Results
 
 ### SSD Disparity
-![SSD Result](results/disparity_ssd.png)
+![SSD Result](results/disparitySSD.png)
 
 ### Normalized Correlation Disparity
-![NC Result](results/disparity_nc.png)
+![NC Result](results/disparityNC.png)
 
 ### Homography Warping (DLT)
 ![Homography Result](results/homography.png)
