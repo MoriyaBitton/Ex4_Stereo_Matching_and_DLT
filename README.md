@@ -60,9 +60,9 @@ Steps:
 
 Using the estimated homography:
 
-- the source image is projected
-- the image is warped into the destination plane
-- the result is blended using a mask
+- The source image is projected
+- The image is warped into the destination plane
+- The result is blended using a mask
 
 This enables applications such as:
 
@@ -74,7 +74,7 @@ This enables applications such as:
 
 # Technologies
 
-'''Python
+```python
 - NumPy
 - OpenCV
 - PyTorch
