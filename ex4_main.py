@@ -10,6 +10,9 @@ def displayDepthImage(l_img, r_img, disparity_range=(0, 5), method=disparitySSD)
     d_ssd = method(l_img, r_img, disparity_range, p_size)
     plt.matshow(d_ssd)
     plt.colorbar()
+
+    plt.savefig(f"results/disparity_{method.__name__}.png")  # save the image here
+
     plt.show()
 
 
