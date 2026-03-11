@@ -1,106 +1,82 @@
 # Stereo Matching and Homography (DLT)
 
-Computer vision project implementing stereo depth estimation and planar image warping using classical vision algorithms.
+This project implements classical **computer vision algorithms** for depth estimation and perspective transformation.
 
-## Overview
+The project includes:
 
-This project implements two core computer vision pipelines:
-
-1. **Stereo Matching for Depth Estimation**
-2. **Homography Estimation and Image Warping using DLT**
-
-The implementation focuses on algorithmic computer vision techniques, including stereo correspondence, disparity computation, homography estimation, and image warping.
+- **Stereo Matching** for depth estimation from a pair of images  
+- **Homography estimation using DLT** for perspective transformation and image warping  
 
 ---
 
-# Part 1 — Stereo Matching
+## Technologies
 
-Depth is estimated from a pair of stereo images by computing the **disparity map** between corresponding pixels.
+`Python` `NumPy` `OpenCV` `SciPy` `Matplotlib`
 
-Two matching methods were implemented:
+---
 
-### SSD (Sum of Squared Differences)
+## Algorithms
 
-For each pixel, a window is compared across a disparity range to find the minimum SSD score.
+### Stereo Matching
 
-The disparity is defined as the horizontal shift that minimizes:
+Depth is estimated by computing the **disparity** between a left and right stereo image.
+
+Two similarity measures are implemented:
+
+- **SSD — Sum of Squared Differences**
 
 $$
 SSD(L,R) = \sum_i (L_i - R_i)^2
 $$
 
-### Normalized Correlation
 
-To improve robustness to illumination changes, disparity is also computed using normalized correlation.
+- **Normalized Cross Correlation**
 
-The disparity is selected based on the maximum correlation score.
-
-### Output
-
-The pipeline produces a **disparity map**, which approximates the scene depth.
+These methods produce a **disparity map** representing the depth of objects in the scene.
 
 ---
-
-# Part 2 — Homography and Image Warping
-
-The project also implements planar image transformation using homography.
 
 ### Homography Estimation (DLT)
 
-The homography matrix is estimated using the **Direct Linear Transform (DLT)** method.
+A homography matrix is estimated from corresponding points between two images using the **Direct Linear Transform (DLT)** algorithm.
 
-Steps:
-
-1. Select 4+ matching points between two images
-2. Construct the linear system
-3. Solve using **Singular Value Decomposition (SVD)**
-4. Normalize the homography matrix
-
-### Image Warping
-
-Using the estimated homography:
-
-- The source image is projected
-- The image is warped into the destination plane
-- The result is blended using a mask
-
-This enables applications such as:
-
-- image projection
-- panorama stitching
-- billboard replacement
+The matrix is then used to **warp one image into the perspective of another**.
 
 ---
 
-# Technologies
+## Example Results
 
-`Python`  
-`OpenCV`  
-`NumPy`  
-`PyTorch`
+### Stereo Depth Estimation
 
----
+![Disparity Map](results/disparity.png)
 
-# Skills Demonstrated
-
-- Stereo Correspondence
-- Disparity Estimation
-- Homography Estimation
-- Direct Linear Transform (DLT)
-- Image Warping
-- Algorithmic Computer Vision
-- Numerical Linear Algebra
+The disparity map represents depth information computed from the stereo image pair.
 
 ---
 
-# Example Results
+### Homography Warping
 
-The project generates:
+![Homography Result](results/warp.png)
 
-- disparity maps from stereo images
-- warped images using homography transformation
+The homography transformation maps one image onto another perspective.
 
+---
 
+## Run the Project
+
+## Run the Project
+
+Install dependencies:
+
+```bash
+pip install numpy opencv-python scipy matplotlib
+```
+
+Run the program:
+
+```bash
+python ex4_main.py
+```
 ----
 
 ###### Ariel University, Israel || Semester B, 2021
