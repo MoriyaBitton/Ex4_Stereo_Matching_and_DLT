@@ -74,10 +74,10 @@ This enables applications such as:
 
 # Technologies
 
-```python
-- NumPy
-- OpenCV
-- PyTorch
+`Python`  
+`OpenCV`  
+`NumPy`  
+`PyTorch`
 
 ---
 
