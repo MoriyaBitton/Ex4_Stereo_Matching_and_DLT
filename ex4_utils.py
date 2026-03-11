@@ -165,6 +165,12 @@ def warpImag(src_img: np.ndarray, dst_img: np.ndarray) -> None:
     plt.show()
     src_p = np.array(src_p)
 
+    src_p = np.array(src_p, dtype=np.float32)
+    dst_p = np.array(dst_p, dtype=np.float32)
+
+    print("src_p:", src_p, src_p.shape)
+    print("dst_p:", dst_p, dst_p.shape)
+
     H_cv, mask = cv2.findHomography(src_p, dst_p)
 
     warp = np.zeros(dst_img.shape)
@@ -181,4 +187,5 @@ def warpImag(src_img: np.ndarray, dst_img: np.ndarray) -> None:
     mask = warp == 0
     canvas = dst_img * mask + (1 - mask) * warp
     plt.imshow(canvas)
+    plt.savefig("results/homography.png")
     plt.show()
