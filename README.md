@@ -9,7 +9,7 @@ This project implements two core computer vision pipelines:
 1. **Stereo Matching for Depth Estimation**
 2. **Homography Estimation and Image Warping using DLT**
 
-The implementation focuses on algorithmic computer vision techniques including stereo correspondence, disparity computation, homography estimation, and image warping.
+The implementation focuses on algorithmic computer vision techniques, including stereo correspondence, disparity computation, homography estimation, and image warping.
 
 ---
 
@@ -25,7 +25,9 @@ For each pixel, a window is compared across a disparity range to find the minimu
 
 The disparity is defined as the horizontal shift that minimizes:
 
-SSD(L,R) = Σ (L_i − R_i)^2
+$$
+SSD(L,R) = \sum_i (L_i - R_i)^2
+$$
 
 ### Normalized Correlation
 
