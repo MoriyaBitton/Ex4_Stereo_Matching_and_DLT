@@ -74,7 +74,7 @@ This enables applications such as:
 
 # Technologies
 
-- Python
+'''Python
 - NumPy
 - OpenCV
 - PyTorch
