@@ -46,19 +46,14 @@ The matrix is then used to **warp one image into the perspective of another**.
 
 ## Example Results
 
-### Stereo Depth Estimation
+### SSD Disparity
+![SSD Result](results/disparity_ssd.png)
 
-![Disparity Map](results/disparity.png)
+### Normalized Correlation Disparity
+![NC Result](results/disparity_nc.png)
 
-The disparity map represents depth information computed from the stereo image pair.
-
----
-
-### Homography Warping
-
-![Homography Result](results/warp.png)
-
-The homography transformation maps one image onto another perspective.
+### Homography Warping (DLT)
+![Homography Result](results/homography.png)
 
 ---
 
